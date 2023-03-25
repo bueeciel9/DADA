@@ -35,7 +35,7 @@ print(f'Total number of parameters: {total_params}')
 
 
 
-VOTR Backbone (based on ViT architecture):
+*1. VOTR Backbone (based on ViT architecture):
 Let's assume the input channels are 1 (grayscale image), and we'll use the following parameters for the Transformer layers:
 
 N (number of transformer layers): 12
@@ -61,7 +61,7 @@ MLP layers: number_of_parameters = 12 * (768 * 3072 + 3072 * 768) = 18,874,368
 LayerNorm and other components: relatively small, can be ignored for rough estimation
 Total parameters for the VOTR Backbone: 35,389,728
 
-VOTR Head:
+*2. VOTR Head:
 For this example, let's assume the VOTR Head has 3 convolutional layers with the following parameters:
 
 Layer 1 (input_channels: 64, output_channels: 128, kernel_size: 3):
@@ -75,7 +75,7 @@ number_of_parameters = (3 * 3 * 256 + 1) * 512 = 1,180,160
 
 Total parameters for the VOTR Head: 1,549,184
 
-SSD Part:
+*3. SSD Part:
 Let's assume the SSD part has the following parameters:
 
 num_anchor_boxes_per_cell: 6
