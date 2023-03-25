@@ -2,14 +2,14 @@ For the VOTR-SSD model, you can calculate the number of parameters in each layer
 
 For Convolutional Layers:
 
-'''py
+```py
 number_of_parameters = (kernel_height * kernel_width * input_channels + 1 (for bias)) * output_channels
-'''
+```
 
 For Fully Connected Layers:
-'''py
+```py
 number_of_parameters = (input_units + 1 (for bias)) * output_units
-'''
+```
 Now, let's break down the process for VOTR-SSD:
 
 Count the number of parameters in each layer of the VOTR backbone. You can find the architecture details in the paper or the code. Make sure to consider all the convolutional layers, including those in the backbone and the head.
@@ -24,11 +24,11 @@ Keep in mind that the actual number of parameters in your modified VOTR-SSD mode
 
 If you want to calculate the number of parameters for the VOTR-SSD model in PyTorch, you can use the following code snippet:
 
-'''py
+```py
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 votr_ssd_model = ... # Load or create your VOTR-SSD model
 total_params = count_parameters(votr_ssd_model)
 print(f'Total number of parameters: {total_params}')
-'''
+```
